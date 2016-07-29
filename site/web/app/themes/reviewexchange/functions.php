@@ -162,14 +162,14 @@ add_filter( 'the_title', 'wpb_woo_endpoint_title', 10, 2 );
  */
 
 
-class Referral_ID {
+class Referral_Link {
 
 	/**
 	 * Custom endpoint name.
 	 *
 	 * @var string
 	 */
-	public static $endpoint = 'referral-id';
+	public static $endpoint = 'referral-link';
 
 	/**
 	 * Plugin actions.
@@ -271,10 +271,10 @@ class Referral_ID {
 	}
 }
 
-new Referral_ID();
+new Referral_Link();
 
 // Flush rewrite rules on plugin activation.
-add_action( 'after_switch_theme', array( 'Referral_ID', 'install' ) );
+add_action( 'after_switch_theme', array( 'Referral_Link', 'install' ) );
 
 
 /*
