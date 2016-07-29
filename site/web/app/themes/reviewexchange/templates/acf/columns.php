@@ -1,5 +1,5 @@
 <div class="row how-it-works">
-	<section class="col-sm-10 col-sm-offset-1">
+	<section class="col-sm-12">
 		
 		<h2 class="text-center"><?php the_sub_field('col_heading') ?></h2>
 		

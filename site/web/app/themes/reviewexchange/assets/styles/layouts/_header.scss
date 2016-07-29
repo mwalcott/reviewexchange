@@ -17,7 +17,7 @@ nav.nav-user {
 				
 				
 				&:hover {
-					color: $brand-red;
+					color: $brand-highlight;
 					background: transparent;
 				}
 				
@@ -129,7 +129,7 @@ a.brand {
 		position: relative;
 		top: -8px;
 		margin: 0 4px;
-		color: $brand-red;
+		color: $brand-highlight;
 		-moz-transform: 		rotate(-45deg);
 		-webkit-transform: 	rotate(-45deg);
 		-o-transform: 			rotate(-45deg);

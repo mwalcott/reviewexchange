@@ -1,10 +1,10 @@
 .btn-primary {
-	background: $brand-red;
-	border-color: $brand-red-border;
+	background: $brand-highlight;
+	border: none;
 	
 	&:hover {
 		opacity: .9 !important;
-		background: #a94442 !important;
-		border-color: #a94442 !important;
+		background: $brand-highlight !important;
+		border: none !important;
 	}
 }
