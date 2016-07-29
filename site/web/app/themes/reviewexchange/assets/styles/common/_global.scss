@@ -1,0 +1,53 @@
+html,
+body {
+
+}
+
+body {
+	font-family: $korolev;
+	font-weight: 300;
+	
+	@media (min-width: $screen-sm-min) {
+		padding-bottom: 90px;
+	}
+	
+}
+
+.border {
+	background-image: url("../images/stripe.png");
+	background-repeat: repeat-x;
+	height: 5px;
+	
+	&.border-top {
+		margin-top: 2px;
+	}
+	
+	&.border-bottom {
+		margin-bottom: 2px;
+	}
+	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $korolev;
+	margin: 0 0 30px;
+	font-weight: 700;
+}
+
+h1, h2 {
+	color: $brand-primary;
+}
+
+h3, h4, h5, h6 {
+	color: $font-color;
+}
+
+p, ul {
+	color: $font-color;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.5em;
+	color: $font-color;
+}

@@ -1,0 +1,27 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #336769;
+$brand-secondary:				#A7D5E1;
+$brand-light:						#D4ECF2;
+$brand-red:							#a94442;
+$brand-red-border:			#a94442;
+
+$font-color:						#777777;
+$white:									#ffffff;
+
+$kon-tiki:							"kon-tiki-aloha-jf";
+$korolev:								"korolev";
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}

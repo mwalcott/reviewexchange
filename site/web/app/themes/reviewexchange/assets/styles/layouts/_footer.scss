@@ -1,0 +1,78 @@
+footer.content-info {
+	margin-top: 50px;
+	margin-bottom: 1px;
+	background: #fff;
+	border-top: 1px solid $brand-light;
+	background-image: url("../images/stripe.png");
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	
+	&.navbar-fixed-bottom {
+		position: static;
+		
+		@media (min-width: $screen-sm-min) {
+			position: fixed;
+		}
+	}
+
+	.container {
+		padding-top: 10px;
+		padding-bottom: 15px;	
+	}
+	.widget_text {
+		font-size: 12px;
+		color: $font-color;
+	}
+	
+	.footer-links {
+		font-size: 12px;
+		text-align: left;
+		margin-bottom: 10px;
+		
+		@media (min-width: $screen-sm-min) {
+			text-align: right;
+			margin-bottom: 0;
+		}
+	}
+
+	.copyright {
+		text-align: center;
+		font-size: 12px;
+		@media (min-width: $screen-sm-min) {
+			text-align: left;
+		}
+	}
+	
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			display: inline-block;
+			margin-left: 0px;
+			margin-right: 10px;
+			
+			@media (min-width: $screen-sm-min) {
+				margin-left: 15px;
+				margin-right: 0;
+			}
+		}
+	}
+	
+	a {
+		//color: #fff;
+	}
+	
+	ul.social {
+		border-left: 1px solid $brand-light;
+		padding-left: 20px;
+		
+		@media (min-width: $screen-sm-min) { 
+			margin-left: 20px;
+			padding-left: 0;
+		}
+	}
+	
+}
+

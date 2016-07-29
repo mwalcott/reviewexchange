@@ -1,0 +1,173 @@
+.main-content {
+	//padding-top: 50px;
+	//padding-bottom: 50px;
+	
+	p {
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-bottom: 30px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.page-header {
+	margin: 40px 0 20px;
+	padding-bottom: 0px;
+	border: none;
+	position: relative;
+	overflow: hidden;
+	
+	&:after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background: $brand-light;
+		position: absolute;
+		bottom: 6px;
+		z-index: -1;
+	}
+	
+	h1 {
+		margin-bottom: 0;
+		display: inline-block;
+		background: #fff;
+		padding-right: 10px;
+	}
+	
+}
+
+// Start Content Builder Styling
+
+// How it Works Styling
+.how-it-works {
+	
+	margin-top: 50px;
+
+	h2 {
+		font-size: 46px;
+		margin-bottom: 1.2em;
+	}
+
+	i {
+		font-size: 60px;
+		margin-bottom: 20px;
+		display: inline-block;
+		color: $brand-red;
+	}
+
+	h4 {
+		font-size: 1.8em;
+		margin: 0 0 20px;
+	}
+	
+	.text-right {
+		
+		text-align: center;
+		margin-bottom: 50px;
+		
+		h4, p {
+			margin-right: 0px;
+		}
+		
+		@media (min-width: $screen-sm-min) {
+			text-align: right;
+			margin-bottom: 0px;
+			h4, p {
+				margin-right: 20px;
+			}
+			
+		}
+		
+	}
+
+	.text-left {
+
+		text-align: center;
+		margin-bottom: 50px;
+		
+		h4, p {
+			margin-left: 0px;
+		}
+		
+		@media (min-width: $screen-sm-min) {
+			text-align: left;
+			margin-bottom: 0px;
+			h4, p {
+				margin-left: 20px;
+			}
+			
+		}
+		
+	}
+	
+}
+
+// Call to Action Styling
+.call-to-action {
+	margin-top: 50px;
+	
+	.col-sm-4 {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		-webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+		box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+		position: relative;
+		
+		&:before,
+		&:after {
+			content: '';
+			background-image: url("../images/stripe.png");
+			background-repeat: repeat-x;
+			background-position: center center;
+			width: 100%;
+			height: 5px;	
+			position: absolute;
+			left: 0;		
+		}
+		
+		&:before {
+			top: 1px;
+		}
+		&:after {
+			bottom: 1px;
+		}
+		
+	}
+		
+	h3 {
+		font-size: 30px;
+		margin-bottom: 15px;
+		color: $brand-primary;
+	}
+	
+}
+
+
+// End Content Builder Styling
+
+
+// Start Custom Signup Template Styling
+
+.page-template-template-sign-up {
+	
+	.wrap {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	
+	main {
+		border-left: 1px solid $brand-light;
+	}
+	
+	a.brand {
+		float: none;
+		display: block;
+		width: 71px;
+		margin: 0 auto;
+	}
+}
+
+// End Custom Signup Template Styling

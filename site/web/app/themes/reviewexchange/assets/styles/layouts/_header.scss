@@ -1,0 +1,167 @@
+header.banner {
+	padding: 12px 0;
+	margin-bottom: 2px;
+}
+
+nav.nav-primary,
+nav.nav-user {
+	
+	padding: 14px 0;
+	
+	ul {
+		li {
+			display: inline-block;
+			a {
+				padding: 0;
+				display: block;
+				
+				
+				&:hover {
+					color: $brand-red;
+					background: transparent;
+				}
+				
+				&.btn-primary {
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+nav.nav-user {
+	padding: 9px 0;
+	ul {
+		li {
+			margin-left: 6px;
+			
+			&:first-child {
+				margin-left: 0;
+			}
+			a {
+				padding: 5px;
+				font-size: 11px;
+			}
+		}
+	}
+	
+	@media (min-width: $screen-sm-min) {
+		padding: 14px 0;
+		ul {
+			li {
+				margin-left: 0;
+				a {
+					padding: 10px 15px;
+					font-size: 14px;
+				}
+			}
+		} 
+	}
+	
+}
+
+nav.nav-primary {
+	clear: left;
+	width: 100%;
+	padding: 12px 0 0;
+	border-top: 1px solid $brand-light;
+	margin-top: 12px;
+	ul {
+		
+		li {
+			width: 33.3333%;
+			float: left;
+			
+			a {
+				text-align: center;
+			}
+			
+		}
+		
+	}
+	
+	@media (min-width: $screen-sm-min) {
+		clear: none;
+		width: auto;
+		padding: 14px 0;
+		margin-top: 0;
+		border-top: none;
+		ul {
+			li {
+				width: auto;
+				float: none;
+				a {
+					padding: 10px 15px;
+				}
+			}
+		}	
+	}
+	
+}
+
+a.brand {
+	float: left;
+	font-family: $kon-tiki;
+	font-size: 32px;
+	line-height: 32px;
+	margin-right: 10px;
+	
+	@media (min-width: $screen-sm-min) {
+		font-size: 54px;
+		line-height: 54px;
+		margin-right: 30px;
+	}
+	
+	span {
+		font-family: $korolev;
+		text-transform: uppercase;
+	}
+	
+	span.rotate {
+		display: inline-block;
+		font-size: 12px;
+		line-height: 12px;
+		font-weight: 300;
+		border-top: 2px solid $brand-secondary;
+		border-bottom: 2px solid $brand-secondary;
+		position: relative;
+		top: -8px;
+		margin: 0 4px;
+		color: $brand-red;
+		-moz-transform: 		rotate(-45deg);
+		-webkit-transform: 	rotate(-45deg);
+		-o-transform: 			rotate(-45deg);
+		-ms-transform: 			rotate(-45deg);
+		transform: 					rotate(-45deg);
+		
+		@media (min-width: $screen-sm-min) {
+			font-size: 20px;
+			line-height: 20px;
+			top: -15px;
+		}
+		
+	}
+	
+	span.sub {
+		display: block;
+		font-size: 12px;
+		line-height: 12px;
+		font-weight: 700;
+		border-top: 2px solid $brand-secondary;
+		padding-top: 1px;
+		text-align: center;
+		margin-top: -2px;
+		
+		@media (min-width: $screen-sm-min) {
+			font-size: 18px;
+			line-height: 18px;
+		}
+	}
+	
+	&:hover {
+		text-decoration: none;
+	}
+		
+}
