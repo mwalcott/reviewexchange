@@ -129,7 +129,7 @@ function wpb_woo_my_account_order() {
 		'downloads'       => __( 'Downloads', 'woocommerce' ),
 		'edit-address'    => __( 'Address', 'woocommerce' ),
 		'payment-methods' => __( 'Payment Methods', 'woocommerce' ),
-		'edit-account'    => __( 'Email & Password', 'woocommerce' ),
+		'edit-account'    => __( 'User Profile', 'woocommerce' ),
 		'customer-logout' => __( 'Logout', 'woocommerce' ),
 	);
 	return $myorder;
@@ -162,14 +162,14 @@ add_filter( 'the_title', 'wpb_woo_endpoint_title', 10, 2 );
  */
 
 
-class Referral_Link {
+class Referral_ID {
 
 	/**
 	 * Custom endpoint name.
 	 *
 	 * @var string
 	 */
-	public static $endpoint = 'referral-link';
+	public static $endpoint = 'referral-id';
 
 	/**
 	 * Plugin actions.
@@ -221,7 +221,7 @@ class Referral_Link {
 
 		if ( $is_endpoint && ! is_admin() && is_main_query() && in_the_loop() && is_account_page() ) {
 			// New page title.
-			$title = __( 'Referral Link', 'woocommerce' );
+			$title = __( 'Referral ID', 'woocommerce' );
 
 			remove_filter( 'the_title', array( $this, 'endpoint_title' ) );
 		}
@@ -240,7 +240,7 @@ class Referral_Link {
 		$logout = $items['customer-logout'];
 		unset( $items['customer-logout'] );
 		// Insert your custom endpoint.
-		$items[ self::$endpoint ] = __( 'Referral Link', 'woocommerce' );
+		$items[ self::$endpoint ] = __( 'Referral ID', 'woocommerce' );
 
 		// Insert back the logout item.
 		$items['customer-logout'] = $logout;
@@ -271,10 +271,10 @@ class Referral_Link {
 	}
 }
 
-new Referral_Link();
+new Referral_ID();
 
 // Flush rewrite rules on plugin activation.
-add_action( 'after_switch_theme', array( 'Referral_Link', 'install' ) );
+add_action( 'after_switch_theme', array( 'Referral_ID', 'install' ) );
 
 
 /*
@@ -424,11 +424,8 @@ function dashboard_helper() {
 add_action( 'woocommerce_after_my_account', 'dashboard_helper', 8 );
 
 
-add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
- 
 function woo_custom_cart_button_text() {
  
         return __( 'Purchase a Reviewer Match for my Book', 'woocommerce' );
  
 }
-
