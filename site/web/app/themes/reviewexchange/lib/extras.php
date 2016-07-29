@@ -40,7 +40,7 @@ function add_loginout_link( $items, $args ) {
 		$items .= '<li class="menu-item menu-logout"><a href="/my-account/customer-logout">Logout</a></li>';
 	}
 	elseif (!is_user_logged_in() && $args->theme_location == 'user_navigation') {
-		$items .= '<li class="menu-item menu-signup"><a class="btn btn-primary" href="/sign-up">Sign Up Free</a></li>';
+		$items .= '<li class="menu-item menu-signup"><a class="btn btn-primary" href="/sign-up">Sign Up FREE!</a></li>';
 		$items .= '<li class="menu-item menu-login"><a href="/my-account">Log In</a></li>';
 	}
 	return $items;
@@ -79,12 +79,19 @@ add_action('below_content', __NAMESPACE__ . '\\content_acf');
 // Main Banner
 function main_banner() { ?>
 <?php if( get_field('heading') && get_field('content') ) { ?>
-	<div class="jumbotron">
-		<div class="container text-center">
-			<h1><?php the_field('heading'); ?></h1>
-			<div class="col-sm-8 col-sm-offset-2">
-			<p><?php the_field('content'); ?></p>
-			<p><a href="<?php the_field('button_url'); ?>" class="btn btn-primary btn-lg"><?php the_field('button_text'); ?></a></p>
+	<div class="jumbotron" style="background-image: url(<?php the_field('image'); ?>);">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-5">
+					
+				</div>
+				<div class="col-sm-7 text-left banner-content-wrap">
+					<div>
+						<h1><?php the_field('heading'); ?></h1>						
+						<?php the_field('content'); ?>
+						<p><a href="<?php the_field('button_url'); ?>" class="btn btn-primary btn-lg btn-block"><?php the_field('button_text'); ?></a></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

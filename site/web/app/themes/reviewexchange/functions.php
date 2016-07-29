@@ -66,9 +66,18 @@ function completed_form() {
 	wp_get_current_user();
 	$complete = esc_attr( $current_user->completed_review_prefrences );
 	if( is_user_logged_in() ) {
-		if( $complete !== "Yes" ) {
-			echo '<div class="alert alert-danger" role="alert">Our records indicate that you have not completed the <a href="'. get_permalink(21) .'">Reviewer Preferences Form</a>. Without this information, we cannot match you correctly with other Authors. Please click the link and submit your preferences to get started. Thank you!</div>';
-		}
+		if( $complete !== "Yes" ) { ?>
+			<div class="alert alert-danger" role="alert">
+				<div class="row">
+					<div class="col-sm-9">
+						You are ready for the next step: setting your review preferences. Please go to your Reviewer Preferences Form to tell us more about what kind of book you enjoy reviewing
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-danger pull-right btn-md btn-block" href="/my-account/reviewer-preferences/">Reviewer Preferences Form</a>
+					</div>
+				</div>
+			</div>
+		<? }
 	}
 	
 }
@@ -120,7 +129,7 @@ function wpb_woo_my_account_order() {
 		'downloads'       => __( 'Downloads', 'woocommerce' ),
 		'edit-address'    => __( 'Address', 'woocommerce' ),
 		'payment-methods' => __( 'Payment Methods', 'woocommerce' ),
-		'edit-account'    => __( 'User Profile', 'woocommerce' ),
+		'edit-account'    => __( 'Email & Password', 'woocommerce' ),
 		'customer-logout' => __( 'Logout', 'woocommerce' ),
 	);
 	return $myorder;
@@ -212,7 +221,7 @@ class Referral_ID {
 
 		if ( $is_endpoint && ! is_admin() && is_main_query() && in_the_loop() && is_account_page() ) {
 			// New page title.
-			$title = __( 'Referral ID', 'woocommerce' );
+			$title = __( 'Referral Link', 'woocommerce' );
 
 			remove_filter( 'the_title', array( $this, 'endpoint_title' ) );
 		}
@@ -231,7 +240,7 @@ class Referral_ID {
 		$logout = $items['customer-logout'];
 		unset( $items['customer-logout'] );
 		// Insert your custom endpoint.
-		$items[ self::$endpoint ] = __( 'Referral ID', 'woocommerce' );
+		$items[ self::$endpoint ] = __( 'Referral Link', 'woocommerce' );
 
 		// Insert back the logout item.
 		$items['customer-logout'] = $logout;
@@ -413,4 +422,13 @@ function dashboard_helper() {
 	
 }
 add_action( 'woocommerce_after_my_account', 'dashboard_helper', 8 );
+
+
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
+ 
+function woo_custom_cart_button_text() {
+ 
+        return __( 'Purchase a Reviewer Match for my Book', 'woocommerce' );
+ 
+}
 

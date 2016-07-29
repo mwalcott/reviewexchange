@@ -1,6 +1,7 @@
 .btn-primary {
 	background: $brand-highlight;
 	border: none;
+	border-radius: 3px;
 	
 	&:hover {
 		opacity: .9 !important;

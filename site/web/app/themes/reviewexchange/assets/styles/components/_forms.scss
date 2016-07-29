@@ -72,15 +72,107 @@ textarea {
 	
 	ul.gform_fields {
 		
+		
 		li.gfield {
 			margin-right: 0;
 			margin-top: 0;
 			margin-bottom: 15px;
 			padding-left: 6px;
 			padding-right: 6px;
-			padding-bottom: 15px;
+			padding-bottom: 25px;
 			
 			border-bottom: 1px solid $brand-light;
+			
+			&.field_admin_only {
+				display: none;
+			}
+
+			.gsection_description,
+			.gfield_description {
+				font-size: 14px;
+				line-height: 22px;
+				font-weight: 300;
+				margin: 0 0 10px;
+				padding: 0;					
+			}
+
+			
+			&.gsection {
+				
+				margin-bottom: 0;
+				padding-bottom: 0;
+				padding-top: 20px;
+				padding-bottom: 50px;
+				
+				
+			}
+			
+			&.genre-inline {
+				
+				border-bottom: none;
+				margin: 0;
+				padding: 0;
+				border-bottom: 1px solid $brand-light;
+				border-left: 1px solid $brand-light;
+				border-right: 1px solid $brand-light;
+				
+				.gfield_label {
+					float: left;
+					width: 35%;
+					display: block;
+					padding: 10px 20px;
+					margin-bottom: 0;
+					@extend .text-right;
+				}
+				
+				
+				.ginput_container_radio {
+					float: right;
+					width: 60%;
+					
+					.gfield_radio {
+						margin: 0;
+						padding: 0;
+						width: 100%;
+						@extend .clearfix;
+						
+						li {
+							width: 33.3333%;
+							float: left;
+							display: block;
+							text-align: center;
+							margin-bottom: 0;
+							position: relative;
+							overflow: visible;
+							
+							label {
+								display: none;
+								color: $brand-highlight;
+								text-transform: uppercase;
+								margin: 0;
+								padding: 0;
+								max-width: 100%;
+								position: absolute;
+								z-index: 20;
+								top: -30px;
+								left: 0;
+								right: 0;
+							}
+							
+							input[type="radio"] {
+								margin: 11px 0;
+								padding: 0;
+								font-size: 50px;
+							}
+														
+						}
+						
+					}
+					
+				}
+				
+			}
+
 			
 			&.input-third {
 				
@@ -115,6 +207,17 @@ textarea {
 			}
 			
 		}
+
+		#field_2_6 {
+			.gfield_radio {
+				li {
+					label {
+						display: block;	
+					}
+				}
+			}
+		}
+
 		
 	}
 	

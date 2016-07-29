@@ -45,7 +45,7 @@
 		    
 		    <div class="col-sm-6 col-sm-pull-6 copyright">
 			    <div class="copyright">
-				    Copyright &copy; <?php echo date('Y'); ?> BookFuel. All Rights Reserved		    
+				    Copyright &copy; <?php echo date('Y'); ?> WaveCloud. All Rights Reserved		    
 			    </div>
 		    </div>
 		    
