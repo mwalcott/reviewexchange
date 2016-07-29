@@ -1,6 +1,16 @@
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
+!web/app/plugins/advanced-custom-fields-pro/
+!web/app/plugins/gravityforms/
+!web/app/plugins/gravityformsuserregistration/
+!web/app/plugins/woocommerce-catalog-visibility-options/
+!web/app/plugins/woocommerce-gateway-stripe/
+!web/app/plugins/woocommerce-memberships/
+!web/app/plugins/woocommerce-product-addons/
+!web/app/plugins/woothemes-updater/
+!web/app/plugins/wp-migrate-db-pro-media-files/
+!web/app/plugins/wp-migrate-db-pro/
 web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*
