@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [production]
-reviewexchange.com
+192.241.184.68
 
 [web]
-reviewexchange.com
+192.241.184.68
