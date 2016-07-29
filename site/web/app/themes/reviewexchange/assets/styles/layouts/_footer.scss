@@ -3,9 +3,8 @@ footer.content-info {
 	margin-bottom: 1px;
 	background: #fff;
 	border-top: 1px solid $brand-light;
-	background-image: url("../images/stripe.png");
-	background-repeat: repeat-x;
-	background-position: left bottom;
+	border-bottom: 5px solid $brand-light;
+	background: #fff;
 	
 	&.navbar-fixed-bottom {
 		position: static;

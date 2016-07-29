@@ -14,8 +14,7 @@ body {
 }
 
 .border {
-	background-image: url("../images/stripe.png");
-	background-repeat: repeat-x;
+	background: $brand-light;
 	height: 5px;
 	
 	&.border-top {
