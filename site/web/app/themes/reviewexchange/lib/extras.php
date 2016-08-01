@@ -82,7 +82,10 @@ function main_banner() { ?>
 	<div class="jumbotron" style="background-image: url(<?php the_field('image'); ?>);">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3 text-center banner-content-wrap">
+				<div class="col-sm-5">
+					
+				</div>
+				<div class="col-sm-7 text-left banner-content-wrap">
 					<div>
 						<h1><?php the_field('heading'); ?></h1>						
 						<?php the_field('content'); ?>
