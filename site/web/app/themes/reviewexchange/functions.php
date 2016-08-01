@@ -420,7 +420,7 @@ function completed_form() {
 						echo 'You are ready for the next step: setting your review preferences. Please go to your Reviewer Preferences Form to tell us more about what kind of book you enjoy reviewing';
 					echo '</div>';
 					echo '<div class="col-sm-3">';
-						echo '';
+						echo '<a class="btn btn-danger pull-right btn-md btn-block" href="/my-account/reviewer-preferences">Reviewer Preferences Form</a>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
