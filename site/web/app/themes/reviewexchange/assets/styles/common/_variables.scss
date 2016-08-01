@@ -26,3 +26,8 @@ $korolev:								"korolev";
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
+
+@mixin transparentBG($opacity) {
+	background: #212741;
+	background: rgba(33, 39, 65, $opacity);	
+}

@@ -409,18 +409,30 @@ function woo_custom_cart_button_text() {
 
 function completed_form() {
 	
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+	$reviewer = '';
+	if (strpos($url,'my-account/reviewer-preferences') !== false) {
+	  $reviewer = 'hidden';
+	} else {
+	  $reviewer = 'visible';
+	}
+	
+	
 	global $current_user;
 	wp_get_current_user();
 	$complete = esc_attr( $current_user->completed_review_prefrences );
 	if( is_user_logged_in() ) {
 		if( $complete !== "Yes" ) {
-			echo '<div class="alert alert-danger" role="alert">';
-				echo '<div class="row">';
-					echo '<div class="col-sm-9">';
-						echo 'You are ready for the next step: setting your review preferences. Please go to your Reviewer Preferences Form to tell us more about what kind of book you enjoy reviewing';
-					echo '</div>';
-					echo '<div class="col-sm-3">';
-						echo '<a class="btn btn-danger pull-right btn-md btn-block" href="/my-account/reviewer-preferences">Reviewer Preferences Form</a>';
+			echo '<div class="alert alert-danger animated bounceInDown '. $reviewer .'" role="alert">';
+				echo '<div class="container">';
+					echo '<div class="row text-center">';
+						echo '<div class="col-sm-8 col-sm-offset-2">';
+							echo 'You are ready for the next step: setting your review preferences. Please go to your Reviewer Preferences Form to tell us more about what kind of book you enjoy reviewing';
+						echo '</div>';
+						echo '<div class="col-sm-12">';
+							echo '<a class="btn btn-danger btn-lg" href="/my-account/reviewer-preferences">Reviewer Preferences Form</a>';
+						echo '</div>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';

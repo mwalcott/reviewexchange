@@ -21,9 +21,9 @@ use Roots\Sage\Wrapper;
     ?>
     
     <?php above_content(); ?>
+    <?php completed_form(); ?>
     
     <div class="wrap container" role="document">
-	    <?php completed_form(); ?>
       <div class="content row">
         <main class="main main-content">
           <?php include Wrapper\template_path(); ?>
