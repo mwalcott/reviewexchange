@@ -431,7 +431,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 							echo 'You are ready for the next step: setting your review preferences. Please go to your Reviewer Preferences Form to tell us more about what kind of book you enjoy reviewing';
 						echo '</div>';
 						echo '<div class="col-sm-12">';
-							echo '<a class="btn btn-danger btn-lg" href="/my-account/reviewer-preferences">Reviewer Preferences Form</a>';
+							echo '<a class="btn btn-primary btn-lg" href="/my-account/reviewer-preferences">Reviewer Preferences Form</a>';
 						echo '</div>';
 					echo '</div>';
 				echo '</div>';
