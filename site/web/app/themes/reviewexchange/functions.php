@@ -66,9 +66,24 @@ function completed_form() {
 	wp_get_current_user();
 	$complete = esc_attr( $current_user->completed_review_prefrences );
 	if( is_user_logged_in() ) {
+		if( $complete !== "Yes" ) { ?>
+			<div class="alert alert-danger" role="alert">
+				<div class="row">
+					<div class="col-sm-9">
+						You are ready for the next step: setting your review preferences. Please go to your Reviewer Preferences Form to tell us more about what kind of book you enjoy reviewing
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-danger pull-right btn-md btn-block" href="/my-account/reviewer-preferences/">Reviewer Preferences Form</a>
+					</div>
+				</div>
+			</div>
+		<? }
+
+/*
 		if( $complete !== "Yes" ) {
 			echo '<div class="alert alert-danger" role="alert">Our records indicate that you have not completed the <a href="'. get_permalink(21) .'">Reviewer Preferences Form</a>. Without this information, we cannot match you correctly with other Authors. Please click the link and submit your preferences to get started. Thank you!</div>';
 		}
+*/
 	}
 	
 }
