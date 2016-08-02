@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 -->
 
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-sm-12">
 		<?php
 			/**
 			 * My Account dashboard.
@@ -56,9 +56,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'woocommerce_after_my_account' );
 		?>
 	</div>
+<!--
 	<div class="col-sm-4 dash-aside">
 		<?php dynamic_sidebar('sidebar-dashboard'); ?>		
 	</div>
+-->
 </div>
 
 
