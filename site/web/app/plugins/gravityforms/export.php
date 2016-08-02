@@ -642,7 +642,18 @@ class GFExport {
 	public static function start_export( $form, $offset = 0, $export_id = '' ) {
 
 		$time_start         = microtime( true );
-		$max_execution_time = 20; // seconds
+
+		/***
+		 * Allows the export max execution time to be changed.
+		 *
+		 * When the max execution time is reached, the export routine stop briefly and submit another AJAX request to continue exporting entries from the point it stopped.
+		 *
+		 * @since 2.0.3.10
+		 *
+		 * @param int   20    The amount of time, in seconds, that each request should run for.  Defaults to 20 seconds.
+		 * @param array $form The Form Object
+		 */
+		$max_execution_time = apply_filters( 'gform_export_max_execution_time', 20, $form ); // seconds
 		$page_size          = 20;
 
 		$form_id = $form['id'];
@@ -953,7 +964,7 @@ class GFExport {
 		if ( GFCommon::current_user_can_any( 'gravityforms_edit_forms' ) ) {
 			$setting_tabs['20'] = array( 'name' => 'export_form', 'label' => __( 'Export Forms', 'gravityforms' ) );
 
-			if ( GFCommon::current_user_can_any( 'gravityforms_create_forms' ) ) {
+			if ( GFCommon::current_user_can_any( 'gravityforms_create_form' ) ) {
 				$setting_tabs['30'] = array( 'name' => 'import_form', 'label' => __( 'Import Forms', 'gravityforms' ) );
 			}
 		}

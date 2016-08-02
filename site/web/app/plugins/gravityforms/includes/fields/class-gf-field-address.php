@@ -961,6 +961,13 @@ class GF_Field_Address extends GF_Field {
 			}
 
 			//adding map link
+			/**
+			 * Disables the Google Maps link from displaying in the address field.
+			 *
+			 * @since 1.9
+			 *
+			 * @param bool false Determines if the map link should be disabled. Set to true to disable. Defaults to false.
+			 */
 			$map_link_disabled = apply_filters( 'gform_disable_address_map_link', false );
 			if ( ! empty( $address ) && $format == 'html' && ! $map_link_disabled ) {
 				$address_qs = str_replace( $line_break, ' ', $address ); //replacing <br/> and \n with spaces

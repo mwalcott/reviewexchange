@@ -3,6 +3,11 @@ if ( ! class_exists( 'GFForms' ) ) {
 	die();
 }
 
+/**
+ * Class GFCommon
+ *
+ * Includes common methods accessed throughout Gravity Forms and add-ons.
+ */
 class GFCommon {
 
 	// deprecated; set to GFForms::$version in GFForms::init() for backwards compat
@@ -13,7 +18,7 @@ class GFCommon {
 	public static $messages = array();
 
 	/**
-	 * An array of dimissible messages to display on the page.
+	 * An array of dismissible messages to display on the page.
 	 *
 	 * @var array $dismissible_messages
 	 */
@@ -168,16 +173,16 @@ class GFCommon {
 		closedir( $dp );
 	}
 
-    public static function add_htaccess_file(){
+    public static function add_htaccess_file() {
 
         $upload_root = GFFormsModel::get_upload_root();
 
         if ( ! is_dir( $upload_root ) ) {
             return;
         }
-	    $htaccess_file = $upload_root . '/.htaccess';
+	    $htaccess_file = $upload_root . '.htaccess';
 	    if ( file_exists( $htaccess_file ) ) {
-			unlink($htaccess_file);
+		    @unlink( $htaccess_file );
 	    }
 	    $txt= '# Disable parsing of PHP for some server configurations. This file may be removed or modified on certain server configurations by using by the gform_upload_root_htaccess_rules filter. Please consult your system administrator before removing this file.
 <Files *>
@@ -1218,6 +1223,7 @@ class GFCommon {
 						continue;
 					}
 
+					$field->set_modifiers( $options_array );
 					$raw_field_value = RGFormsModel::get_lead_field_value( $lead, $field );
 					$field_value     = GFCommon::get_lead_field_display( $field, $raw_field_value, rgar( $lead, 'currency' ), $use_text, $format, 'email' );
 
@@ -2622,9 +2628,11 @@ class GFCommon {
 	}
 
 	public static function form_page_title( $form ){
+		$editable_class = GFCommon::current_user_can_any( 'gravityforms_edit_forms' ) ? ' gform_settings_page_title_editable' : '';
+
 		?>
 		<h1>
-			<span id='gform_settings_page_title' class='gform_settings_page_title' onclick='GF_ShowEditTitle()'><?php echo esc_html( rgar( $form, 'title' ) ); ?></span>
+			<span id='gform_settings_page_title' class='gform_settings_page_title<?php echo $editable_class?>' onclick='GF_ShowEditTitle()'><?php echo esc_html( rgar( $form, 'title' ) ); ?></span>
 			<?php GFForms::form_switcher(); ?>
 			<span class="gf_admin_page_formid">ID: <?php echo absint( $form['id'] ); ?></span>
 		</h1>
@@ -4647,8 +4655,11 @@ class GFCommon {
 		$value = self::format_variable_value( $value, $url_encode, $esc_html, $format, $nl2br );
 
 		// modifier will be at index 4 unless used in a conditional shortcode in which case it would be at index 5
-		$i        = $match[0][0] == '{' ? 4 : 5;
-		$modifier = strtolower( rgar( $match, $i ) );
+		$i          = $match[0][0] == '{' ? 4 : 5;
+		$modifier   = strtolower( rgar( $match, $i ) );
+		$modifiers  = array_map( 'trim', explode( ',', $modifier ) );
+		$url_encode = ! $url_encode && in_array( 'urlencode', $modifiers );
+		$field->set_modifiers( $modifiers );
 
 		$value = $field->get_value_merge_tag( $value, $input_id, $lead, $form, $modifier, $raw_value, $url_encode, $esc_html, $format, $nl2br );
 

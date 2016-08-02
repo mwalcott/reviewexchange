@@ -80,7 +80,8 @@ function gf_is_match( formId, rule ) {
 		inputId         = rule['fieldId'],
 		fieldId         = gformExtractFieldId( inputId ),
 		inputIndex      = gformExtractInputIndex( inputId ),
-		isInputSpecific = inputIndex !== false;
+		isInputSpecific = inputIndex !== false,
+		$inputs;
 
 	if( isInputSpecific ) {
 		$inputs = $( '#input_{0}_{1}_{2}'.format( formId, fieldId, inputIndex ) );
@@ -138,24 +139,22 @@ function gf_is_match_default( $input, rule, formId, fieldId ) {
 	for( var i = 0; i < values.length; i++ ) {
 
 		// fields with pipes in the value will use the label for conditional logic comparison
-		var hasLabel = values[i] ? values[i].indexOf( '|' ) >= 0 : true;
+		var hasLabel   = values[i] ? values[i].indexOf( '|' ) >= 0 : true,
+			fieldValue = gf_get_value( values[i] );
 
-		fieldValue = gf_get_value( values[i] );
-
-		var fieldNumberFormat = gf_get_field_number_format( rule.fieldId, formId );
+		var fieldNumberFormat = gf_get_field_number_format( rule.fieldId, formId, 'value' );
 		if( fieldNumberFormat && ! hasLabel ) {
 			fieldValue = gf_format_number( fieldValue, fieldNumberFormat );
 		}
 
 		var ruleValue = rule.value;
-		if ( fieldNumberFormat ){
+		if ( fieldNumberFormat ) {
 			ruleValue = gf_format_number( ruleValue, fieldNumberFormat );
 		}
 
 		if( gf_matches_operation( fieldValue, ruleValue, rule.operator ) ) {
 			matchCount++;
 		}
-
 
 	}
 
@@ -165,8 +164,22 @@ function gf_is_match_default( $input, rule, formId, fieldId ) {
 	return isMatch;
 }
 
-function gf_get_field_number_format( fieldId, formId ) {
-	return window['gf_global'] && gf_global.number_formats && gf_global.number_formats[ formId ] && gf_global.number_formats[ formId ][ fieldId ] ? gf_global.number_formats[ formId ][ fieldId ] : false;
+function gf_get_field_number_format( fieldId, formId, context ) {
+
+	var fieldNumberFormats = rgars( window, 'gf_global/number_formats/{0}/{1}'.format( formId, fieldId ) ),
+		format = false;
+
+	if( fieldNumberFormats === '' ) {
+		return format;
+	}
+
+	if( typeof context == 'undefined' ) {
+		format = fieldNumberFormats.price !== false ? fieldNumberFormats.price : fieldNumberFormats.value;
+	} else {
+		format = fieldNumberFormats[ context ];
+	}
+
+	return format;
 }
 
 function gf_format_number( value, fieldNumberFormat ) {
