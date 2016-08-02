@@ -1,13 +1,22 @@
-<header class="banner">
+<?php 
+	$jumbotron = '';
+	if( get_field('banner') ) {
+		$jumbotron = 'has-banner';
+	}
+	else {
+		$jumbotron = '';
+	}
+?>
+<header class="banner <?php echo $jumbotron; ?>">
   <div class="container">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>">
-	    Review Exchange.
+	    Review Exchange
 	    <span>
 		    <i class="fa fa-star" aria-hidden="true"></i>
 		    <i class="fa fa-star" aria-hidden="true"></i>
 		    <i class="fa fa-star" aria-hidden="true"></i>
 		    <i class="fa fa-star" aria-hidden="true"></i>
-		    <i class="fa fa-star-o" aria-hidden="true"></i>
+		    <i class="fa fa-star" aria-hidden="true"></i>
 	    </span>
 	  </a>
     <nav class="nav-user pull-right">

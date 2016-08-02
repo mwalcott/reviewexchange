@@ -108,7 +108,7 @@ function wpb_woo_my_account_order() {
 		'downloads'       => __( 'Downloads', 'woocommerce' ),
 		'edit-address'    => __( 'Address', 'woocommerce' ),
 		'payment-methods' => __( 'Payment Methods', 'woocommerce' ),
-		'edit-account'    => __( 'User Profile', 'woocommerce' ),
+		'edit-account'    => __( 'Email and Password', 'woocommerce' ),
 		'customer-logout' => __( 'Logout', 'woocommerce' ),
 	);
 	return $myorder;
@@ -124,7 +124,7 @@ function wpb_woo_endpoint_title( $title, $id ) {
 		$title = "My Matches";
 	}
 	if( is_wc_endpoint_url( 'edit-account' ) && in_the_loop() ) {
-		$title = "User Profile";
+		$title = "Email and Password";
 	}
 	if( is_wc_endpoint_url( 'edit-address' ) && in_the_loop() ) {
 		$title = "Address";
@@ -141,14 +141,14 @@ add_filter( 'the_title', 'wpb_woo_endpoint_title', 10, 2 );
  */
 
 
-class Referral_ID {
+class Referral_Link {
 
 	/**
 	 * Custom endpoint name.
 	 *
 	 * @var string
 	 */
-	public static $endpoint = 'referral-id';
+	public static $endpoint = 'referral-link';
 
 	/**
 	 * Plugin actions.
@@ -200,7 +200,7 @@ class Referral_ID {
 
 		if ( $is_endpoint && ! is_admin() && is_main_query() && in_the_loop() && is_account_page() ) {
 			// New page title.
-			$title = __( 'Referral ID', 'woocommerce' );
+			$title = __( 'Referral Link', 'woocommerce' );
 
 			remove_filter( 'the_title', array( $this, 'endpoint_title' ) );
 		}
@@ -219,7 +219,7 @@ class Referral_ID {
 		$logout = $items['customer-logout'];
 		unset( $items['customer-logout'] );
 		// Insert your custom endpoint.
-		$items[ self::$endpoint ] = __( 'Referral ID', 'woocommerce' );
+		$items[ self::$endpoint ] = __( 'Referral Link', 'woocommerce' );
 
 		// Insert back the logout item.
 		$items['customer-logout'] = $logout;
@@ -233,6 +233,8 @@ class Referral_ID {
 	public function endpoint_content() { ?>
 
 		<div class="woocommerce-MyAccount-content">
+			
+			<?php the_field('referral_is_content', 'option'); ?>
 
 			<?php do_action( 'woocommerce_before_my_account' ); ?>
 
@@ -250,10 +252,10 @@ class Referral_ID {
 	}
 }
 
-new Referral_ID();
+new Referral_Link();
 
 // Flush rewrite rules on plugin activation.
-add_action( 'after_switch_theme', array( 'Referral_ID', 'install' ) );
+add_action( 'after_switch_theme', array( 'Referral_Link', 'install' ) );
 
 
 /*
@@ -354,6 +356,8 @@ class Reviewer_Preferences  {
 	public function endpoint_content() { ?>
 
 		<div class="woocommerce-MyAccount-content">
+			
+			<?php the_field('reviewer_preferences_content', 'option'); ?>
 
 			<?php gravity_form( 2, false, false, false, '', false ); ?>
 
@@ -432,6 +436,41 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 						echo '</div>';
 						echo '<div class="col-sm-12">';
 							echo '<a class="btn btn-primary btn-lg" href="/my-account/reviewer-preferences">Reviewer Preferences Form</a>';
+						echo '</div>';
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
+		}
+	}
+	
+}
+
+function completed_form_activate() {
+	
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+	$reviewer = '';
+	if (strpos($url,'my-account/reviewer-preferences') !== false) {
+	  $reviewer = 'hidden';
+	} else {
+	  $reviewer = 'visible';
+	}
+	
+	
+	global $current_user;
+	wp_get_current_user();
+	$complete = esc_attr( $current_user->completed_review_prefrences );
+	if( is_user_logged_in() ) {
+		if( $complete !== "Yes" ) {
+			echo '<div class="alert alert-danger animated bounceInDown '. $reviewer .'" role="alert">';
+				echo '<div class="container">';
+					echo '<div class="row text-center">';
+						echo '<div class="col-sm-8 col-sm-offset-2">';
+							echo '<h2>'. get_field('activate_header', 'option') .'</h2>';
+							echo get_field('activate_content', 'option');
+						echo '</div>';
+						echo '<div class="col-sm-12">';
+							echo '<a class="btn btn-primary btn-lg" href="'. get_field('activate_button_url', 'option') .'">'. get_field('activate_button_text', 'option') .'</a>';
 						echo '</div>';
 					echo '</div>';
 				echo '</div>';

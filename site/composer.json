@@ -53,7 +53,8 @@
     "wpackagist-plugin/wp-email-login": "4.6.4", 
     "wpackagist-plugin/password-strength-for-woocommerce": "1.0.1",
     "wpackagist-plugin/wp-mail-smtp": "0.9.6",
-    "wpackagist-plugin/wpmandrill": "1.33",  
+    "wpackagist-plugin/wpmandrill": "1.33",
+    "wpackagist-plugin/peters-login-redirect": "2.9.0",
     "roots/soil": "3.7.0"
   },
   "require-dev": {

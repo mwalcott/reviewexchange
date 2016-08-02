@@ -31,7 +31,9 @@ add_action( 'wp_head', 'wpmu_activate_stylesheet' );
 
 get_header(); ?>
 
-<div id="content" class="widecolumn container text-center">
+<?php completed_form_activate(); ?>
+
+<div id="content" class="widecolumn container text-center activation-page">
     <?php if ( empty($_GET['key']) && empty($_POST['key']) ) { ?>
 
         <h2><?php _e('Activation Key Required') ?></h2>
@@ -53,11 +55,10 @@ get_header(); ?>
             if ( 'already_active' == $result->get_error_code() || 'blog_taken' == $result->get_error_code() ) {
                 $signup = $result->get_error_data();
                 ?>
-                <h2><?php _e('Congratulations your account is now active. See below for more inforamtion.'); ?></h2>
                 <?php
                 echo '<p class="lead-in">';
                 if ( $signup->domain . $signup->path == '' ) {
-                    printf( __('Your account has been activated. You may now <a href="%1$s">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href="%4$s">reset your password</a>.'), network_site_url( 'wp-login.php', 'login' ), $signup->user_login, $signup->user_email, network_site_url( 'wp-login.php?action=lostpassword', 'login' ) );
+
                 } else {
                     printf( __('Your site at <a href="%1$s">%2$s</a> is active. You may now log in to your site using your chosen username of &#8220;%3$s&#8221;. Please check your email inbox at %4$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href="%5$s">reset your password</a>.'), 'http://' . $signup->domain, $signup->domain, $signup->user_login, $signup->user_email, network_site_url( 'wp-login.php?action=lostpassword' ) );
                 }

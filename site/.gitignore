@@ -11,6 +11,8 @@ web/app/plugins/*
 !web/app/plugins/woothemes-updater/
 !web/app/plugins/wp-migrate-db-pro-media-files/
 !web/app/plugins/wp-migrate-db-pro/
+!web/app/plugins/gravityperks/
+!web/app/plugins/gwautologin/
 web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*

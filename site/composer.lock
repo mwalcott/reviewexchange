@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "52fc5e098d2777166c1e20adf02296c5",
-    "content-hash": "51dde262cf20fd3eedc2e5a7abc332f6",
+    "hash": "606381864bcd0bb5dc544bd162e42037",
+    "content-hash": "5bfc7ef6d17aec689dc1a48e0a39c316",
     "packages": [
         {
             "name": "composer/installers",
@@ -542,6 +542,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/password-strength-for-woocommerce/"
+        },
+        {
+            "name": "wpackagist-plugin/peters-login-redirect",
+            "version": "2.9.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/peters-login-redirect/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/peters-login-redirect.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/peters-login-redirect/"
         },
         {
             "name": "wpackagist-plugin/refer-a-friend-for-woocommerce-by-wpgens",

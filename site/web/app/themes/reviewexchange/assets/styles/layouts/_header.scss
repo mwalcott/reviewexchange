@@ -1,11 +1,16 @@
 header.banner {
 	padding: 12px 0;
 	margin-bottom: 2px;
-	position: absolute;
-	width: 100%;
-	z-index: 20;
+/*
 	background: rgb(255,255,255);
 	background: rgba(255,255,255,.8);
+*/
+	
+	&.has-banner {
+		position: absolute;
+		width: 100%;
+		z-index: 20;
+	}
 }
 
 nav.nav-primary,
@@ -108,14 +113,17 @@ nav.nav-primary {
 
 a.brand {
 	float: left;
-	font-size: 24px;
-	line-height: 24px;
-	margin-right: 10px;
+	font-size: 26px;
+	line-height: 26px;
+	margin-top: 8px;
 	text-align: right;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: $brand-secondary;
-	padding-top: 12px;
+	padding-top: 0px;
+	padding-right: 20px;
+	margin-right: 20px;
+	border-right: 3px solid $brand-light;
 	
 	@media (min-width: $screen-sm-min) {
 
