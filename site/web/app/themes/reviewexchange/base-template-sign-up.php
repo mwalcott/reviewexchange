@@ -22,12 +22,18 @@ use Roots\Sage\Wrapper;
     
     <div class="wrap container" role="document">
       <div class="content row">
-	      <div class="hidden-xs col-sm-2 col-sm-offset-2">
+        <main class="col-sm-8 col-sm-offset-2">
 			    <a class="brand" href="<?= esc_url(home_url('/')); ?>">
-				  	1<span class="rotate">for</span>1<span class="sub">Reviews</span>
+				    Review Exchange
+				    <span>
+					    <i class="fa fa-star" aria-hidden="true"></i>
+					    <i class="fa fa-star" aria-hidden="true"></i>
+					    <i class="fa fa-star" aria-hidden="true"></i>
+					    <i class="fa fa-star" aria-hidden="true"></i>
+					    <i class="fa fa-star" aria-hidden="true"></i>
+				    </span>
 				  </a>
-	      </div>
-        <main class="col-sm-6">
+
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
       </div><!-- /.content -->

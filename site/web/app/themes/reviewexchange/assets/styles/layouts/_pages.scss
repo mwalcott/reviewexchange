@@ -161,15 +161,24 @@
 	}
 	
 	main {
-		border-left: 1px solid $brand-light;
+		//border-left: 1px solid $brand-light;
 	}
 	
 	a.brand {
-		float: none;
+		float: left;
 		display: block;
-		width: 71px;
-		margin: 0 auto;
+		border-right: none;
+		margin-bottom: 20px;
 	}
+	
+	.gform_wrapper {
+		clear: both;	
+		border-top: 1px solid $brand-light;
+		border-bottom: 1px solid $brand-light;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	
 }
 
 // End Custom Signup Template Styling
