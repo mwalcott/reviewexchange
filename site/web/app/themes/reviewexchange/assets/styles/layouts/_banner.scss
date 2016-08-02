@@ -4,8 +4,8 @@
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding-top: 92px;
-	padding-bottom: 22%;
+	padding-top: 112px;
+	padding-bottom: 0;
 	
 	h1 {
 		color: #F4F4F4;
@@ -49,6 +49,11 @@
 			
 		}
 		
+	}
+	
+	@media (min-width: $screen-sm-min) {
+		padding-top: 92px;
+		padding-bottom: 22%;
 	}
 	
 }

@@ -284,16 +284,28 @@ div.product-addon {
 		abbr[title] {
 			border-bottom: none;
 		}
+		abbr.required {
+			color: $brand-red-border;
+		}
 		
 	}
 	p {
 		font-size: 12px;
+		
+		&:last-child {
+			margin-bottom: 10px;
+		}
 	}
 	
 	&.product-addon-book-title,
 	&.product-addon-amazon-book-url {
-		width: 50%;
-		float: left;
+		width: 100%;
+		
+		@media (min-width: $screen-sm-min) {
+			width: 50%;
+			float: left;
+		}
+		
 	}
 	
 	&.product-addon-what-format-is-your-book-in {
@@ -337,9 +349,55 @@ form.checkout {
 .woocommerce input.button.alt {
 	@extend .btn;
 	@extend .btn-primary;
-	@extend .btn-lg;
+		
 }
 
 
-
+.woocommerce-cart {
+	table.cart {
+		th {
+			vertical-align: top;
+			padding: 10px 20px;
+			
+			&.product-price ,
+			&.product-quantity,
+			&.product-subtotal {
+				text-align: center;
+			}
+			
+		}
+		td {
+			vertical-align: top;
+			padding: 20px;
+			
+			&.product-name {
+				h3 {
+					margin-bottom: 10px;
+				}
+				h5 {
+					margin-bottom: 0;
+				}
+				p {
+					margin: 0 0 10px;
+					padding: 0;
+					font-size: 12px;
+				}
+			}
+			
+			&.product-price,
+			&.product-quantity,
+			&.product-subtotal {
+				text-align: center;
+				font-weight: 700;
+				font-size: 20px;
+				color: $brand-secondary;
+			}
+			
+			&.product-subtotal {
+				color: $brand-highlight;
+			}
+			
+		}
+	}
+}
 

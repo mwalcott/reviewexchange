@@ -78,6 +78,27 @@ add_action('below_content', __NAMESPACE__ . '\\content_acf');
 
 // Main Banner
 function main_banner() { ?>
+
+<?php 
+	$loggedHeading = '';
+	$loggedContent = '';
+	$loggedButtonText = '';
+	$loggedButtonLink = '';
+	
+	if( is_user_logged_in() ) {
+		$loggedHeading = get_field('heading_loggedin');
+		$loggedContent = get_field('content_loggedin');
+		$loggedButtonText = get_field('button_text_loggedin');
+		$loggedButtonLink = get_field('button_url_loggedin');
+	} else {
+		$loggedHeading = get_field('heading');
+		$loggedContent = get_field('content');
+		$loggedButtonText = get_field('button_text');
+		$loggedButtonLink = get_field('button_url');
+	}
+
+?>
+
 <?php if( get_field('heading') && get_field('content') ) { ?>
 	<div class="jumbotron" style="background-image: url(<?php the_field('image'); ?>);">
 		<div class="container">
@@ -87,9 +108,9 @@ function main_banner() { ?>
 				</div>
 				<div class="col-sm-7 text-left banner-content-wrap">
 					<div>
-						<h1><?php the_field('heading'); ?></h1>						
-						<?php the_field('content'); ?>
-						<p><a href="<?php the_field('button_url'); ?>" class="btn btn-primary btn-lg btn-block"><?php the_field('button_text'); ?></a></p>
+						<h1><?php echo $loggedHeading; ?></h1>						
+						<?php echo $loggedContent; ?>
+						<p><a href="<?php echo $loggedButtonLink; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $loggedButtonText; ?></a></p>
 					</div>
 				</div>
 			</div>
