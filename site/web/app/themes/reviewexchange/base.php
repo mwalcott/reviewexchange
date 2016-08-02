@@ -21,7 +21,11 @@ use Roots\Sage\Wrapper;
     ?>
     
     <?php above_content(); ?>
-    <?php completed_form(); ?>
+    <?php 
+	    if( is_singular( 'product' ) ) {
+				completed_form();    
+	    }
+	  ?>
     
     <div class="wrap container" role="document">
       <div class="content row">
