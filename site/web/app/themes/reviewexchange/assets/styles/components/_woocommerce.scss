@@ -302,8 +302,10 @@ div.product-addon {
 		width: 100%;
 		
 		@media (min-width: $screen-sm-min) {
+/*
 			width: 50%;
 			float: left;
+*/
 		}
 		
 	}
@@ -320,8 +322,30 @@ div.product-addon {
 			label {
 				margin-bottom: 0;
 			}
+			
 		}
 	}
+
+	&.product-addon-how-fast-do-you-want-your-book-review-delivered {
+			.form-row {
+				select {
+					width: 120px;
+					display: inline;
+				}
+				&:before {
+					content: 'I pledge to deliver my review within ';
+					margin-right: 5px;
+				}
+				&:after {
+					content: ' days of receiving my assignment';
+					margin-left: 5px;
+				}
+				&:before, &:after {
+					display: inline-block;
+				}
+			}
+	}
+
 	
 } 
 
