@@ -9,12 +9,11 @@
 	
 	h1 {
 		color: #F4F4F4;
-		font-size: 30px;
+		font-size: 28px;
 		text-transform: uppercase;
 		margin-bottom: 20px;
-		
-		@media (min-width: $screen-sm-min) {
-			font-size: 30px;
+		sup {
+			color: #fff;
 		}
 	}
 	

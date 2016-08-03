@@ -1,10 +1,6 @@
 header.banner {
 	padding: 12px 0;
 	margin-bottom: 2px;
-/*
-	background: rgb(255,255,255);
-	background: rgba(255,255,255,.8);
-*/
 	
 	&.has-banner {
 		position: absolute;
@@ -111,6 +107,14 @@ nav.nav-primary {
 	
 }
 
+sup {
+	font-size: 40%;
+	top: -1.25em;
+	margin-left: 3px;
+	color: $font-color;
+}
+
+
 a.brand {
 	float: left;
 	font-size: 16px;
@@ -122,6 +126,17 @@ a.brand {
 	color: $brand-secondary;
 	padding-top: 0px;
 	
+
+	span {
+		display: block;
+		color: $brand-highlight;
+		padding-right: 5.8%;
+	}
+		
+	&:hover {
+		text-decoration: none;
+	}
+	
 	@media (min-width: $screen-sm-min) {
 		font-size: 26px;
 		line-height: 26px;
@@ -131,13 +146,5 @@ a.brand {
 		margin-right: 20px;
 	}
 	
-	span {
-		display: block;
-		color: $brand-highlight;
-	}
-		
-	&:hover {
-		text-decoration: none;
-	}
 		
 }

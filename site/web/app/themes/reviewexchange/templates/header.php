@@ -10,7 +10,7 @@
 <header class="banner <?php echo $jumbotron; ?>">
   <div class="container">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>">
-	    Review Exchange
+	    Review Exchange<sup><i class="fa fa-trademark" aria-hidden="true"></i></sup>
 	    <span>
 		    <i class="fa fa-star" aria-hidden="true"></i>
 		    <i class="fa fa-star" aria-hidden="true"></i>
