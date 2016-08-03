@@ -1,4 +1,5 @@
 <?php 
+/*
 	global $current_user;
 	wp_get_current_user();
 	$complete = esc_attr( $current_user->completed_review_prefrences );
@@ -9,6 +10,7 @@
 			woocommerce_content();
 		}
 	}
+*/
 ?>
 
-<?php //woocommerce_content(); ?>
+<?php woocommerce_content(); ?>

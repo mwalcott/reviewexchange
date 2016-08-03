@@ -390,7 +390,11 @@ function dashboard_helper() {
 		// loop through the rows of data
 		while ( have_rows('helper_sections', 'option') ) : the_row(); ?>
 		<div class="helper">
-			<h4><?php the_sub_field('heading_helper'); ?></h4>
+			<h4>
+				<a href="<?php the_sub_field('heading_link_helper'); ?>">
+					<?php the_sub_field('heading_helper'); ?>
+				</a>
+			</h4>
 			<?php the_sub_field('content_helper'); ?>
 		</div>
 		

@@ -270,6 +270,7 @@ body {
 	
 }
 
+
 div.product-addon {
 	margin: 0 0 20px;
 
@@ -348,6 +349,26 @@ div.product-addon {
 
 	
 } 
+
+body.request-a-review-match {
+	div.product-addon {
+		&.product-addon-book-title,
+		&.product-addon-amazon-book-url {
+			width: 100%;
+			
+			@media (min-width: $screen-sm-min) {
+				width: 50%;
+				float: left;	
+			}
+			
+		}
+		&.product-addon-my-book-is-available-as {
+			p.form-row {
+				display: inline-block;
+			}
+		}
+	}
+}
 
 form.checkout {
 	max-width: 800px;
