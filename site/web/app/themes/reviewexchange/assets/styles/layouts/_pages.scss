@@ -49,6 +49,10 @@
 .how-it-works {
 	
 	margin-top: 50px;
+	
+	br {
+		display: none;
+	}
 
 	h2 {
 		font-size: 46px;
@@ -171,12 +175,29 @@
 		margin-bottom: 20px;
 	}
 	
-	.gform_wrapper {
+	.gform_wrapper,
+	.gform_confirmation_message {
 		clear: both;	
 		border-top: 1px solid $brand-light;
 		border-bottom: 1px solid $brand-light;
 		padding-top: 20px;
 		padding-bottom: 20px;
+	}
+	
+	.gform_confirmation_message {
+		
+		h2 {
+			margin-bottom: 10px;
+			border-top: 1px solid $brand-light;
+			margin-left: 15px;
+			margin-right: 15px;
+			padding-top: 30px;
+		}
+		
+		.how-it-works {
+			margin-top: 30px;
+		}
+				
 	}
 	
 }

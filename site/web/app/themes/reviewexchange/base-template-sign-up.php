@@ -22,7 +22,7 @@ use Roots\Sage\Wrapper;
     
     <div class="wrap container" role="document">
       <div class="content row">
-        <main class="col-sm-8 col-sm-offset-2">
+        <main class="col-sm-10 col-sm-offset-1">
 			    <a class="brand" href="<?= esc_url(home_url('/')); ?>">
 				    Review Exchange
 				    <span>
