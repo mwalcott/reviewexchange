@@ -8,15 +8,15 @@ vault_sudoer_passwords:
 # Variables to accompany `group_vars/staging/wordpress_sites.yml`
 # Note: the site name (`example.com`) must match up with the site name in the above file.
 vault_wordpress_sites:
-  example.com:
+  reviewexchange.com:
     env:
       db_password: example_dbpassword
       # Generate your keys here: https://roots.io/salts.html
-      auth_key: "generateme"
-      secure_auth_key: "generateme"
-      logged_in_key: "generateme"
-      nonce_key: "generateme"
-      auth_salt: "generateme"
-      secure_auth_salt: "generateme"
-      logged_in_salt: "generateme"
-      nonce_salt: "generateme"
+      auth_key: "Zw9[|R#X49w>:r;:o^|e%d0vn1!0-+>H%nq32Yp2GM?hmzQ_M|qc[zO{/K*/_>I*"
+      secure_auth_key: "-sy(DZ8/4QEYW8<1qH7/;uBVwB?}09seC.G/m(bH|g>,uDv0ZO=p5BG/9.FufH><"
+      logged_in_key: "JjxKi@TzoT{qBB[$4^muMdR:c9q<LWlD>PtC!5cQ<4>[o,M#>)s)X&#ffbW8v7IX"
+      nonce_key: ">HvPN/HJ;sU4.*@fQ7$fz1a,2a%7eBlplRWmxG%z%[,=C5|]<Fgc]{RcRvaa<S|b"
+      auth_salt: "=owovAjPf,A2?hIzJQ_,u:wmHXJ4!y41wcI|7RU0G=Owl0rm`Y>2PwrFD./{wo0D"
+      secure_auth_salt: "l`0N2w*a.!ZbjEs!Xcn5%$2h:;&sV|}(AvAw|B&s9iPaw[f6jpjzV{yjdi[`bheh"
+      logged_in_salt: "Z4`_l]o:PasC>`4X7p.fyhh^X<gdk/o{|!4j,CLX6Ck14yg7{0sj3^,VWu8hD8^{"
+      nonce_salt: "$==f8JNBt/36aGsXci6.4f7/,(W.j2fM`ZF5bC+fX.gR8M1LPM8^R?&Q;;ksQ=:`"
