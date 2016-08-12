@@ -43,7 +43,7 @@
     "wpackagist-plugin/all-in-one-webmaster": "9.9.1",
     "wpackagist-plugin/google-analytics-dashboard-for-wp": "4.9.3.1",
     "wpackagist-plugin/woocommerce": "2.6.4",
-    "wpackagist-plugin/refer-a-friend-for-woocommerce-by-wpgens": "1.0.5",
+    "wpackagist-plugin/refer-a-friend-for-woocommerce-by-wpgens": "1.0.6",
     "wpackagist-plugin/custom-post-type-ui": "1.3.5",
     "wpackagist-plugin/intuitive-custom-post-order": "3.0.7",
     "wpackagist-plugin/pardot": "1.4",
@@ -54,9 +54,12 @@
     "wpackagist-plugin/password-strength-for-woocommerce": "1.0.1",
     "wpackagist-plugin/wp-mail-smtp": "0.9.6",
     "wpackagist-plugin/wpmandrill": "1.33",
-    "wpackagist-plugin/peters-login-redirect": "2.9.0",
+    "wpackagist-plugin/peters-login-redirect": "2.9.1",
     "wpackagist-plugin/cyfe": "1.3",
-    "wpackagist-plugin/robots-txt-file": "1.2",
+    "wpackagist-plugin/robots-txt-file": "1.3",
+    "wpackagist-plugin/icegram": "1.9.20.1",
+    "wpackagist-plugin/icegram-rainmaker": "0.11",
+    "wpackagist-plugin/wc-fields-factory": "1.3.4",
     "roots/soil": "3.7.0"
   },
   "require-dev": {

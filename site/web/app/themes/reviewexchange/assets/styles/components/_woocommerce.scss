@@ -346,9 +346,15 @@ div.product-addon {
 				}
 			}
 	}
-
+	
+	&.product-addon-url-for-your-print-book-in-amazon,
+	&.product-addon-url-for-your-ebook-in-amazon {
+		//display: none;
+	}
 	
 } 
+
+
 
 body.request-a-review-match {
 	div.product-addon {
