@@ -341,7 +341,7 @@ div.product-addon {
 	&.product-addon-how-fast-do-you-want-your-book-review-delivered {
 			.form-row {
 				select {
-					width: 120px;
+					width: 140px;
 					display: inline;
 				}
 				&:before {
@@ -360,11 +360,11 @@ div.product-addon {
 	
 	&.product-addon-url-for-your-print-book-in-amazon,
 	&.product-addon-url-for-your-ebook-in-amazon {
-		height: 0px;
+		display: none;
 		overflow: hidden;
 		
 		&.open {
-			height: 100%;
+			display: block;
 		}
 		
 	}

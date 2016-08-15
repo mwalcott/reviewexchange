@@ -22,6 +22,20 @@ textarea {
 
 
 }
+select {
+	background: #fff;
+	background-image: url(../images/arrow-down.png);
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	padding: 12px 10px;
+	line-height: 1.5em;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	outline: none;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, .8)
+
+}
 textarea {
 	max-height: 200px;
 }
