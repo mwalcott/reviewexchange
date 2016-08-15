@@ -506,7 +506,7 @@ class My_Books  {
 	}
 }
 
-new My_Books();
+//new My_Books();
 
 // Flush rewrite rules on plugin activation.
 add_action( 'after_switch_theme', array( 'My_Books', 'install' ) );

@@ -19,6 +19,10 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+
+
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -37,6 +41,37 @@
     'about_us': {
       init: function() {
         // JavaScript to be fired on the about us page
+      }
+    },
+    'request_a_match': {
+      init: function() {
+        // JavaScript to be fired on the about us page
+/*
+				$(".product-addon-url-for-your-print-book-in-amazon").hide();
+				$(".product-addon-url-for-your-ebook-in-amazon").hide();
+*/
+				
+				$(".addon-select").change(function(){
+					
+					if ( $(this).val() === "yes-my-book-is-in-amazon-1" ) { 
+						$(".product-addon-url-for-your-print-book-in-amazon").addClass( "open" );
+						$(".product-addon-url-for-your-ebook-in-amazon").addClass( "open" );
+/*
+						$(".product-addon-url-for-your-print-book-in-amazon").show("slow");
+						$(".product-addon-url-for-your-ebook-in-amazon").show("slow");
+*/
+					}
+					else if( $(this).val() === "no-my-book-is-not-yet-in-amazon-2" ) { 
+						$(".product-addon-url-for-your-print-book-in-amazon").removeClass( "open" );
+						$(".product-addon-url-for-your-ebook-in-amazon").removeClass( "open" );
+
+					}
+					else { 
+						$(".product-addon-url-for-your-print-book-in-amazon").removeClass( "open" );
+						$(".product-addon-url-for-your-ebook-in-amazon").removeClass( "open" );
+					}
+				
+				});
       }
     }
   };

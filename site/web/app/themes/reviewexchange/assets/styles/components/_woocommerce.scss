@@ -188,6 +188,7 @@
 		form.cart {
 			margin-top: 20px;
 			margin-bottom: 0;
+			overflow: hidden;
 			
 			button[type="submit"] {
 				margin-left: 10px;
@@ -298,17 +299,27 @@ div.product-addon {
 		}
 	}
 	
+/*
 	&.product-addon-book-title,
-	&.product-addon-amazon-book-url {
+	&.product-addon-amazon-book-url
+*/
+	
+	&.product-addon-book-title,
+	&.product-addon-genre,
+	&.product-addon-url-for-your-print-book-in-amazon,
+	&.product-addon-url-for-your-ebook-in-amazon {
 		width: 100%;
 		
 		@media (min-width: $screen-sm-min) {
-/*
 			width: 50%;
 			float: left;
-*/
 		}
 		
+	}
+	
+	&.product-addon-my-books-status-in-the-amazon-store-is,
+	&.product-addon-how-fast-do-you-want-your-book-review-delivered {
+		clear: both;
 	}
 	
 	&.product-addon-what-format-is-your-book-in {
@@ -349,7 +360,13 @@ div.product-addon {
 	
 	&.product-addon-url-for-your-print-book-in-amazon,
 	&.product-addon-url-for-your-ebook-in-amazon {
-		//display: none;
+		height: 0px;
+		overflow: hidden;
+		
+		&.open {
+			height: 100%;
+		}
+		
 	}
 	
 } 
