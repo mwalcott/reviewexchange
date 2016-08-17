@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7eaa617567083c3de7dee4014cf91c2f",
-    "content-hash": "1b0744ee2b4a07fac98a8ef777845348",
+    "hash": "1d9c44b7a12e662aae636b979542e85c",
+    "content-hash": "844ba756d4f263a3e26e1be699594849",
     "packages": [
         {
             "name": "composer/installers",
@@ -742,6 +742,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/woocommerce/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce-conversion-tracking",
+            "version": "1.2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-conversion-tracking/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-conversion-tracking.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-conversion-tracking/"
         },
         {
             "name": "wpackagist-plugin/wp-email-login",
