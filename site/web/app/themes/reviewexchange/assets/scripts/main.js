@@ -50,22 +50,16 @@
 				$(".addon-wrap-44-my-books-status-in-the-amazon-store-is-2 .addon-select").change(function(){
 					
 					if ( $(this).val() === "yes-my-book-is-in-amazon-1" ) { 
-						$(".product-addon-url-for-your-print-book-in-amazon").addClass( "open" );
-						$(".product-addon-url-for-your-ebook-in-amazon").addClass( "open" );
-						$(".product-addon-url-for-your-print-book-in-amazon input").val('');
-						$(".product-addon-url-for-your-ebook-in-amazon input").val('');
+						$(".product-addon-link-to-your-print-book-in-amazon").addClass( "open" );
+						$(".product-addon-link-to-your-ebook-in-amazon").addClass( "open" );
 					}
 					else if( $(this).val() === "no-my-book-is-not-yet-in-amazon-2" ) { 
-						$(".product-addon-url-for-your-print-book-in-amazon").removeClass( "open" );
-						$(".product-addon-url-for-your-ebook-in-amazon").removeClass( "open" );
-						$(".product-addon-url-for-your-print-book-in-amazon input").val('');
-						$(".product-addon-url-for-your-ebook-in-amazon input").val('');
+						$(".product-addon-link-to-your-print-book-in-amazon").removeClass( "open" );
+						$(".product-addon-link-to-your-ebook-in-amazon").removeClass( "open" );
 					}
 					else { 
-						$(".product-addon-url-for-your-print-book-in-amazon").removeClass( "open" );
-						$(".product-addon-url-for-your-ebook-in-amazon").removeClass( "open" );
-						$(".product-addon-url-for-your-print-book-in-amazon input").val('');
-						$(".product-addon-url-for-your-ebook-in-amazon input").val('');
+						$(".product-addon-link-to-your-print-book-in-amazon").removeClass( "open" );
+						$(".product-addon-link-to-your-ebook-in-amazon").removeClass( "open" );
 					}
 				
 				});

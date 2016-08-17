@@ -319,8 +319,9 @@ div.product-addon {
 	
 	&.product-addon-book-title,
 	&.product-addon-genre,
-	&.product-addon-url-for-your-print-book-in-amazon,
-	&.product-addon-url-for-your-ebook-in-amazon {
+	&.product-addon-link-to-your-print-book-in-amazon,
+	&.product-addon-link-to-your-ebook-in-amazon {		
+		
 		width: 100%;
 		
 		@media (min-width: $screen-sm-min) {
@@ -371,8 +372,8 @@ div.product-addon {
 			}
 	}
 	
-	&.product-addon-url-for-your-print-book-in-amazon,
-	&.product-addon-url-for-your-ebook-in-amazon {
+	&.product-addon-link-to-your-print-book-in-amazon,
+	&.product-addon-link-to-your-ebook-in-amazon {
 		display: none;
 		overflow: hidden;
 		
