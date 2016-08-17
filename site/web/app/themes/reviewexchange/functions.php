@@ -545,7 +545,8 @@ add_action( 'woocommerce_after_my_account', 'dashboard_helper', 8 );
 
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );
 function woo_custom_cart_button_text() {
-	return __( 'Purchase a Reviewer Match for my Book', 'woocommerce' );
+	//return __( 'Purchase a Reviewer Match for my Book', 'woocommerce' );
+	return __( 'Match Me', 'woocommerce' );
 }
 
 function completed_form() {

@@ -120,10 +120,18 @@
 		.form-row {
 			padding: 0;
 			margin: 0;
+			
+			&.terms {
+				float: none;
+			}
+			
 			input[type="submit"] {
 				@extend .btn;
 				@extend .btn-primary;
-				margin-top: 30px;
+				@extend .btn-lg;
+				@extend .pull-left;
+				margin-top: 10px;
+				clear: both;
 			}
 		}
 	}
@@ -422,7 +430,8 @@ form.checkout {
 .woocommerce input.button.alt {
 	@extend .btn;
 	@extend .btn-primary;
-		
+	@extend .btn-lg;
+	@extend .pull-right;
 }
 
 
