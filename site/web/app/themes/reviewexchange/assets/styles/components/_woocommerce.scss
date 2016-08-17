@@ -1,7 +1,7 @@
 .woocommerce-account {
 	
 	.woocommerce-MyAccount-navigation,
-	.woocommerce-MyAccount-content {
+	.woocommerce-MyAccount-co1ntent {
 		float: none;
 		width: 100%;
 	}
@@ -120,6 +120,11 @@
 		.form-row {
 			padding: 0;
 			margin: 0;
+			input[type="submit"] {
+				@extend .btn;
+				@extend .btn-primary;
+				margin-top: 30px;
+			}
 		}
 	}
 	
@@ -469,3 +474,12 @@ form.checkout {
 	}
 }
 
+.woocommerce-account .woocommerce-MyAccount-content {
+	float: none;
+	width: 100%;
+}
+
+.woocommerce form .form-row input.input-text, 
+.woocommerce form .form-row textarea {
+	line-height: 1.5em;
+}
