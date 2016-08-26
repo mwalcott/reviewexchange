@@ -20,6 +20,3 @@ wordpress_sites:
       letsencrypt_ca: "https://acme-staging.api.letsencrypt.org"
     cache:
       enabled: false
-    env:
-      wp_home: https://dev.reviewexchange.com
-      wp_siteurl: https://dev.reviewexchange.com/wp
