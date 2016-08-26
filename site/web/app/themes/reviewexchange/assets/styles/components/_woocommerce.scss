@@ -322,14 +322,42 @@ div.product-addon {
 	&.product-addon-link-to-your-print-book-in-amazon,
 	&.product-addon-link-to-your-ebook-in-amazon,
 	&.product-addon-book-id {		
-		
 		width: 100%;
-		
+		display: none;
 		@media (min-width: $screen-sm-min) {
 			width: 50%;
 			float: left;
 		}
+	}
+	&.my-books,
+	&.add-book-button {
+		width: 100%;
+		@media (min-width: $screen-sm-min) {
+			float: left;
+		}
+	}
+	&.my-books {
+		@media (min-width: $screen-sm-min) {
+			padding-right: 50px;
+			width: 65%;
+			position: relative;
+			&:after {
+				content: '- or -';
+				position: absolute;
+				bottom: 22px;
+				right: 15px;
+			}
+		}
+	}
+	&.add-book-button {
 		
+		@media (min-width: $screen-sm-min) {
+			padding-top: 54px;
+			width: 35%;
+		}
+	}
+	&.no-padding {
+		padding-top: 0;
 	}
 	
 	&.product-addon-my-books-status-in-the-amazon-store-is,

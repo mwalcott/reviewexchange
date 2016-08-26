@@ -203,3 +203,55 @@
 }
 
 // End Custom Signup Template Styling
+
+
+.manage-books {
+	list-style: none;
+	margin: 0 0 30px;
+	padding: 0;
+	border-top: 1px solid #efefef;
+	li {
+		border-bottom: 1px solid #efefef;
+		padding: 10px 20px;
+		font-size: 20px;
+		line-height: 24px;
+		color: $brand-primary;
+		.edit-book {
+			opacity: 1;
+		}
+		
+		&:hover {
+			.edit-book {
+				opacity: 1;
+			}
+		}
+/*
+		div.collapse {
+			.well {
+				margin-top: 10px;
+			}
+		}
+*/
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-top: none;
+		li {
+			border-bottom: none;
+			float: left;
+			display: block;
+			width: auto;
+			padding: 0;
+			font-size: 14px;
+			a {
+				text-decoration: none;
+				&:hover {
+					color: $brand-highlight;
+				}
+			}
+		}
+	}
+
+}

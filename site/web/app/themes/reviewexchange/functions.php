@@ -674,11 +674,13 @@ function select_book() {
 	// The Query
 	$book_query = new WP_Query( $args );
 	
+	
+	
 	// The Loop
 	if ( $book_query->have_posts() ) {
-		
-		echo '<div class="product-addon">';
-			echo '<h3 class="addon-name">Choose a Book</h3>';
+		$i = 1;
+		echo '<div class="product-addon my-books">';
+			echo '<h3 class="addon-name">Choose a Book <abbr class="required" title="Required field">*</abbr></h3>';
 			echo '<div class="addon-description">';
 				echo '<p>Select a book for review</p>';
 			echo '</div>';
@@ -688,40 +690,72 @@ function select_book() {
 					while ( $book_query->have_posts() ) {
 						$book_query->the_post(); 
 						$post_slug = $post->post_name;
+						$selected = '';
+						if( $i == 1 ) {
+							$selected = 'selected="true"';
+						}
+						
 						?>
-						<option value="<?php echo $post_slug; ?>" data-bookid="<?php echo $post->ID; ?>" data-booktitle="<?php echo get_the_title(); ?>">
+						<option <?php echo $selected; ?> value="<?php echo $post_slug; ?>" data-bookid="<?php echo $post->ID; ?>" data-booktitle="<?php echo get_the_title(); ?>">
 							<?php 
-								//echo $post->ID .' ';
 								the_title(); 
 							?>
 						</option>
-					<?php }
+					<?php $i++; } 
 				echo '</select>';
 			echo '</p>';
 		echo '</div>';
+		?>
+		<div class="product-addon add-book-button">
+			<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
+		  	Upload a Book
+			</button>
+		</div>		
+		
+		<?php
 		/* Restore original Post Data */
 		wp_reset_postdata();
-	} else {
-		echo '<div class=>You have not added a book yet. <a href="#FIXME">Add a Book</a></div>';
-	}		
+	} else { ?>
+		<div class="product-addon add-book-button no-padding">
+			<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
+		  	Upload a Book
+			</button>
+		</div>		
+	<?php } ?>
 
-	echo '<div class="clearfix"><a href="" class="btn btn-primary">Add Book</a></div>';
-
-	$args = array(
-		'post_id' => 'new_post',
-		'post_title' => true,
-		'new_post' => array(
-			'post_type' => 'books',
-			'post_status' => 'publish',
-		),
-		'submit_value'	=> 'Add Book',
-		'updated_message' => false
-	);
-	
-	acf_form( $args ); 
-
-
-}
+<?php }
 add_action('woocommerce_before_add_to_cart_button', 'select_book', 5);
+
+function add_book() { ?>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Add a Book</h4>
+	      </div>
+	      <div class="modal-body">
+				<?php
+					$args = array(
+						'post_id' => 'new_post',
+						'post_title' => true,
+						'new_post' => array(
+							'post_type' => 'books',
+							'post_status' => 'publish',
+						),
+						'submit_value'	=> 'Add Book',
+						'updated_message' => false
+					);
+					acf_form( $args ); 
+				?>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+<?php 
+	
+}
+add_action('woocommerce_after_single_product', 'add_book', 5);
 
 ?>
