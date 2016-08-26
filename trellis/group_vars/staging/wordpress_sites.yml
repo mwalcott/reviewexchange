@@ -6,16 +6,18 @@ wordpress_sites:
   reviewexchange.com:
     site_hosts:
       - canonical: dev.reviewexchange.com
+        #redirects:
+         # - https://dev.reviewexchange.com
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
     repo: git@github.com:mwalcott/reviewexchange.git # replace with your Git repo URL
     repo_subtree_path: site # relative path to your Bedrock/WP directory in your repo
     branch: master
-    letsencrypt_ca: "https://acme-staging.api.letsencrypt.org"
     multisite:
       enabled: false
     ssl:
       enabled: true
       provider: letsencrypt
+      letsencrypt_ca: "https://acme-staging.api.letsencrypt.org"
     cache:
       enabled: false
     env:
