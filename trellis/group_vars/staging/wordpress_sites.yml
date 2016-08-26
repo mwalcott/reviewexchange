@@ -23,4 +23,3 @@ wordpress_sites:
     env:
       wp_home: https://dev.reviewexchange.com
       wp_siteurl: https://dev.reviewexchange.com/wp
-
