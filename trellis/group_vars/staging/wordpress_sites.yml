@@ -19,3 +19,7 @@ wordpress_sites:
       provider: letsencrypt
     cache:
       enabled: false
+    env:
+      wp_home: https://staging.reviewexchange.com
+      wp_siteurl: https://staging.reviewexchange.com/wp
+
