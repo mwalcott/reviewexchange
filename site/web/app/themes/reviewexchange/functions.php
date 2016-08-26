@@ -705,6 +705,21 @@ function select_book() {
 		echo '<div class=>You have not added a book yet. <a href="#FIXME">Add a Book</a></div>';
 	}		
 
+	echo '<div class="clearfix"><a href="" class="btn btn-primary">Add Book</a></div>';
+
+	$args = array(
+		'post_id' => 'new_post',
+		'post_title' => true,
+		'new_post' => array(
+			'post_type' => 'books',
+			'post_status' => 'publish',
+		),
+		'submit_value'	=> 'Add Book',
+		'updated_message' => false
+	);
+	
+	acf_form( $args ); 
+
 
 }
 add_action('woocommerce_before_add_to_cart_button', 'select_book', 5);

@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [staging]
-staging.reviewexchange.com
+104.131.127.48
 
 [web]
-staging.reviewexchange.com
+104.131.127.48
