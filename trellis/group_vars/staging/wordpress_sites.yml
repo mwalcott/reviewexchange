@@ -6,8 +6,6 @@ wordpress_sites:
   reviewexchange.com:
     site_hosts:
       - canonical: dev.reviewexchange.com
-        redirects:
-          - https://dev.reviewexchange.com
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
     repo: git@github.com:mwalcott/reviewexchange.git # replace with your Git repo URL
     repo_subtree_path: site # relative path to your Bedrock/WP directory in your repo
@@ -21,6 +19,6 @@ wordpress_sites:
     cache:
       enabled: false
     env:
-      wp_home: http://dev.reviewexchange.com
-      wp_siteurl: http://dev.reviewexchange.com/wp
+      wp_home: https://dev.reviewexchange.com
+      wp_siteurl: https://dev.reviewexchange.com/wp
 
