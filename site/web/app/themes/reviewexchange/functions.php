@@ -63,43 +63,52 @@ add_action('wp', 'custom_maybe_activate_user', 9);
 
 
 
-/** 
- * Register new status
+/**
+ * Register new statuses - add an array for each status
  * Tutorial: http://www.sellwithwp.com/woocommerce-custom-order-status-2/
 **/
-function register_awaiting_shipment_order_status() {
-    register_post_status( 'wc-awaiting-shipment', array(
+function register_new_wc_order_statuses() {
+    register_post_status( 'wc-matching', array(
+        'label'                     => 'Matching',
+        'public'                    => true,
+        'exclude_from_search'       => false,
+        'show_in_admin_all_list'    => true,
+        'show_in_admin_status_list' => true,
+        'label_count'               => _n_noop( 'Matching <span class="count">(%s)</span>', 'Matching <span class="count">(%s)</span>' )
+    ) );
+    register_post_status( 'wc-matched', array(
         'label'                     => 'Matched',
         'public'                    => true,
         'exclude_from_search'       => false,
         'show_in_admin_all_list'    => true,
         'show_in_admin_status_list' => true,
         'label_count'               => _n_noop( 'Matched <span class="count">(%s)</span>', 'Matched <span class="count">(%s)</span>' )
-    ) ); 
-
+    ) );
+    // repeat register_post_status() for each new status
 }
-add_action( 'init', 'register_awaiting_shipment_order_status' );
-
-// Add to list of WC Order statuses
-function add_awaiting_shipment_to_order_statuses( $order_statuses ) {
-
+add_action( 'init', 'register_new_wc_order_statuses' );
+ 
+ 
+// Add new statuses to list of WC Order statuses
+function add_new_wc_statuses_to_order_statuses( $order_statuses ) {
+ 
     $new_order_statuses = array();
-
-    // add new order status after processing
+ 
+    // add new order statuses after processing
     foreach ( $order_statuses as $key => $status ) {
-
+ 
         $new_order_statuses[ $key ] = $status;
-
+ 
         if ( 'wc-processing' === $key ) {
-            $new_order_statuses['wc-awaiting-shipment'] = 'Matched';
+            $new_order_statuses['wc-matching'] = 'Matching';
+            $new_order_statuses['wc-matched'] = 'Matched';
+            // Add a $new_order_statuses[key] = value; for each status you've added (in the order you want)
         }
-
     }
-
+ 
     return $new_order_statuses;
 }
-add_filter( 'wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
-
+add_filter( 'wc_order_statuses', 'add_new_wc_statuses_to_order_statuses' );
 
 function wpb_woo_my_account_order() {
 	$myorder = array(
@@ -481,16 +490,8 @@ class My_Books  {
 		<div class="woocommerce-MyAccount-content">
 			
 			<h2>My Books</h2>
-
-			<?php 
-/*
-				$args = array(
-					'' => ,
-				);
-*/
-				acf_form();
-			?>
 			
+			<?php get_template_part('templates/acf/add-books'); ?>
 
 		</div>
 
@@ -506,7 +507,7 @@ class My_Books  {
 	}
 }
 
-//new My_Books();
+new My_Books();
 
 // Flush rewrite rules on plugin activation.
 add_action( 'after_switch_theme', array( 'My_Books', 'install' ) );
@@ -661,4 +662,51 @@ $woocommerce->cart->empty_cart();
  
 return $cart_item_data;
 }
+
+function select_book() {
+
+	global $current_user;
+	global $post;
+	$args = array(
+		'post_type' => 'books',
+		'author' => $current_user->ID
+	);
+	// The Query
+	$book_query = new WP_Query( $args );
+	
+	// The Loop
+	if ( $book_query->have_posts() ) {
+		
+		echo '<div class="product-addon">';
+			echo '<h3 class="addon-name">Choose a Book</h3>';
+			echo '<div class="addon-description">';
+				echo '<p>Select a book for review</p>';
+			echo '</div>';
+			echo '<p class="form-row form-row-wide">';
+				echo '<select id="myBooks" name="my-books">';
+					echo '<option selected="true" disabled="true">Select a Book</option>';
+					while ( $book_query->have_posts() ) {
+						$book_query->the_post(); 
+						$post_slug = $post->post_name;
+						?>
+						<option value="<?php echo $post_slug; ?>" data-bookid="<?php echo $post->ID; ?>" data-booktitle="<?php echo get_the_title(); ?>">
+							<?php 
+								//echo $post->ID .' ';
+								the_title(); 
+							?>
+						</option>
+					<?php }
+				echo '</select>';
+			echo '</p>';
+		echo '</div>';
+		/* Restore original Post Data */
+		wp_reset_postdata();
+	} else {
+		echo '<div class=>You have not added a book yet. <a href="#FIXME">Add a Book</a></div>';
+	}		
+
+
+}
+add_action('woocommerce_before_add_to_cart_button', 'select_book', 5);
+
 ?>

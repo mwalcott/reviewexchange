@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1d9c44b7a12e662aae636b979542e85c",
-    "content-hash": "844ba756d4f263a3e26e1be699594849",
+    "hash": "5cd484465baa3bf871dc5dc17f0dd2e6",
+    "content-hash": "c22a6053208ef203a1d49a234e395195",
     "packages": [
         {
             "name": "composer/installers",
@@ -385,15 +385,15 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-seo-pack",
-            "version": "2.3.8",
+            "version": "2.3.9.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-seo-pack/",
-                "reference": "tags/2.3.8"
+                "reference": "tags/2.3.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.9.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -425,15 +425,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.3.5",
+            "version": "1.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.3.5"
+                "reference": "tags/1.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.4.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -485,15 +485,15 @@
         },
         {
             "name": "wpackagist-plugin/icegram",
-            "version": "1.9.20.1",
+            "version": "1.9.21",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/icegram/",
-                "reference": "tags/1.9.20.1"
+                "reference": "tags/1.9.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/icegram.1.9.20.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/icegram.1.9.21.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -505,15 +505,15 @@
         },
         {
             "name": "wpackagist-plugin/icegram-rainmaker",
-            "version": "0.11",
+            "version": "0.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/icegram-rainmaker/",
-                "reference": "tags/0.11"
+                "reference": "tags/0.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/icegram-rainmaker.0.11.zip",
+                "url": "https://downloads.wordpress.org/plugin/icegram-rainmaker.0.12.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -685,15 +685,15 @@
         },
         {
             "name": "wpackagist-plugin/user-role-editor",
-            "version": "4.26.3",
+            "version": "4.27.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-role-editor/",
-                "reference": "tags/4.26.3"
+                "reference": "tags/4.27.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.26.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.27.1.zip",
                 "reference": null,
                 "shasum": null
             },

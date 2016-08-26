@@ -63,6 +63,13 @@
 					}
 				
 				});
+
+$('#myBooks').change(function() {
+    selectedOption = $('option:selected', this);
+    $('input.addon-custom').val( selectedOption.data('booktitle') );
+    $('input.addon-custom-pattern').val( selectedOption.data('bookid') );
+});				
+			
       }
     }
   };
