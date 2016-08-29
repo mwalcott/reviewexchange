@@ -64,11 +64,14 @@
 				
 				});
 
-$('#myBooks').change(function() {
-    selectedOption = $('option:selected', this);
-    $('input.addon-custom').val( selectedOption.data('booktitle') );
-    $('input.addon-custom-pattern').val( selectedOption.data('bookid') );
-});				
+				$('#myBooks').change(function() {
+				    selectedOption = $('option:selected', this);
+				    $('p.addon-wrap-44-book-title-0 input').val( selectedOption.data('booktitle') );
+				    $('p.addon-wrap-44-book-id-1 input').val( selectedOption.data('bookid') );
+				    $('p.addon-wrap-44-book-genre-2 input').val( selectedOption.data('bookgenre') );
+				    $('p.addon-wrap-44-amazon-print-book-link-3 input').val( selectedOption.data('bookprint') );
+				    $('p.addon-wrap-44-amazon-ebook-link-4 input').val( selectedOption.data('bookebook') );
+				});				
 			
       }
     }

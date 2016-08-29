@@ -318,15 +318,18 @@ div.product-addon {
 */
 	
 	&.product-addon-book-title,
-	&.product-addon-genre,
-	&.product-addon-link-to-your-print-book-in-amazon,
-	&.product-addon-link-to-your-ebook-in-amazon,
-	&.product-addon-book-id {		
+	&.product-addon-book-id,
+	&.product-addon-book-genre,
+	&.product-addon-amazon-print-book-link,
+	&.product-addon-amazon-ebook-link {		
 		width: 100%;
 		display: none;
+		clear: both;
 		@media (min-width: $screen-sm-min) {
+/*
 			width: 50%;
 			float: left;
+*/
 		}
 	}
 	&.my-books,

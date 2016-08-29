@@ -696,7 +696,14 @@ function select_book() {
 						}
 						
 						?>
-						<option <?php echo $selected; ?> value="<?php echo $post_slug; ?>" data-bookid="<?php echo $post->ID; ?>" data-booktitle="<?php echo get_the_title(); ?>">
+						<option 
+							<?php echo $selected; ?> 
+							value="<?php echo $post_slug; ?>" 
+							data-bookid="<?php echo $post->ID; ?>" 
+							data-booktitle="<?php echo get_the_title(); ?>"
+							data-bookgenre="<?php the_field('book_genre'); ?>" 
+							data-bookprint="<?php the_field('link_to_your_print_book_in_amazon'); ?>" 
+							data-bookebook="<?php the_field('link_to_your_ebook_book_in_amazon'); ?>">
 							<?php 
 								the_title(); 
 							?>
@@ -708,7 +715,7 @@ function select_book() {
 		?>
 		<div class="product-addon add-book-button">
 			<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
-		  	Upload a Book
+		  	Add Book
 			</button>
 		</div>		
 		
@@ -718,7 +725,7 @@ function select_book() {
 	} else { ?>
 		<div class="product-addon add-book-button no-padding">
 			<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
-		  	Upload a Book
+		  	Add Book
 			</button>
 		</div>		
 	<?php } ?>
@@ -732,7 +739,7 @@ function add_book() { ?>
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Add a Book</h4>
+	        <h4 class="modal-title" id="myModalLabel">Add Book</h4>
 	      </div>
 	      <div class="modal-body">
 				<?php
