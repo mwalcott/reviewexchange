@@ -5,7 +5,7 @@
 wordpress_sites:
   reviewexchange.com:
     site_hosts:
-      - canonical: dev.reviewexchange.com
+      - canonical: staging.reviewexchange.com
         #redirects:
          # - https://dev.reviewexchange.com
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
@@ -18,7 +18,7 @@ wordpress_sites:
       enabled: true
       provider: letsencrypt
     env:
-      wp_home: https://dev.reviewexchange.com
-      wp_siteurl: https://dev.reviewexchange.com/wp
+      wp_home: https://staging.reviewexchange.com
+      wp_siteurl: https://staging.reviewexchange.com/wp
     cache:
       enabled: false
