@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [staging]
-dev.reviewexchange.com
+45.55.252.107
 
 [web]
-dev.reviewexchange.com
+45.55.252.107
