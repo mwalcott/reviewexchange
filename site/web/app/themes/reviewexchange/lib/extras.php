@@ -64,6 +64,10 @@ function content_acf() {
 			if( get_row_layout() == 'call_to_action' )
 			
 				get_template_part('templates/acf/call-to-action');
+
+			if( get_row_layout() == 'review_carousel' )
+			
+				get_template_part('templates/acf/review-carousel');
 									
 		endwhile;
 	

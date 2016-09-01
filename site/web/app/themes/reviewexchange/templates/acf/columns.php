@@ -1,4 +1,4 @@
-<div class="row how-it-works">
+<div class="row how-it-works section">
 	<section class="col-sm-12">
 		
 		<h2 class="text-center"><?php the_sub_field('col_heading') ?></h2>
