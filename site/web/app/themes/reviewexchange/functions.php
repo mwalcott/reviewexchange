@@ -568,6 +568,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 	if( is_user_logged_in() ) {
 // 		if( $complete !== "Yes" ) {
 			echo '<div class="alert alert-danger animated bounceInDown '. $reviewer .'" role="alert">';
+			echo '<span class="back-dash"><a href="/my-account">Close</a></span>';
 				echo '<div class="container">';
 					echo '<div class="row text-center">';
 						echo '<div class="col-sm-8 col-sm-offset-2">';
