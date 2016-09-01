@@ -566,7 +566,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 	wp_get_current_user();
 	$complete = esc_attr( $current_user->completed_review_prefrences );
 	if( is_user_logged_in() ) {
-		if( $complete !== "Yes" ) {
+// 		if( $complete !== "Yes" ) {
 			echo '<div class="alert alert-danger animated bounceInDown '. $reviewer .'" role="alert">';
 				echo '<div class="container">';
 					echo '<div class="row text-center">';
@@ -574,6 +574,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 							echo '<h2>'. get_field('popup_header', 'option') .'</h2>';
 							echo get_field('popup_content', 'option');
 						echo '</div>';
+/*
 						echo '<div class="col-sm-12">';
 							echo '<a class="btn btn-primary btn-lg" href="'. get_field('popup_button_url', 'option') .'">'. get_field('popup_button_text', 'option') .'</a>';
 						echo '</div>';
@@ -594,10 +595,11 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 								echo '</div>';								
 							echo '</div>';
 						echo '</div>';
+*/
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
-		}
+// 		}
 	}
 	
 }

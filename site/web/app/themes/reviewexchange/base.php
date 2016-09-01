@@ -23,9 +23,15 @@ use Roots\Sage\Wrapper;
     
     <?php above_content(); ?>
     <?php 
+/*
 	    if( is_page( array( 63, 65, 53 ) ) || is_post_type_archive( 'faqs' ) || is_front_page() ) {
 				
 	    } else {
+		    completed_form();
+	    }
+*/
+	    
+	    if( is_singular( 'product' ) ) {
 		    completed_form();
 	    }
 	  ?>
